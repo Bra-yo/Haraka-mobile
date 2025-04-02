@@ -24,11 +24,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.brayo.harakamall.R
 import com.brayo.harakamall.ui.theme.neworange
 
 @Composable
-fun StartScreen(){
+fun StartScreen(navController: NavController){
     Column (
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -95,7 +97,7 @@ fun StartScreen(){
 @Composable
 fun StartScreenPreview(){
 
-    StartScreen()
+    StartScreen(rememberNavController())
 
 
 }
