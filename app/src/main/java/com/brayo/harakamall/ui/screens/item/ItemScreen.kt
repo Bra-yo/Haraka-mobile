@@ -1,5 +1,6 @@
 package com.brayo.harakamall.ui.screens.items
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -16,6 +17,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
@@ -43,6 +45,7 @@ import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -50,9 +53,11 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.brayo.harakamall.R
+import com.brayo.harakamall.navigation.ROUT_INTENT
 import com.brayo.harakamall.ui.theme.Gold
 import com.brayo.harakamall.ui.theme.Orange
 
@@ -104,6 +109,16 @@ fun ItemScreen(navController: NavController){
                         contentDescription = "Notifications",
                     )
                 }
+                IconButton(
+                    onClick = {
+                        navController.navigate(ROUT_INTENT)
+                    }
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = "Arrow",
+                    )
+                }
             }
 
         )
@@ -143,6 +158,9 @@ fun ItemScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        val mContext = LocalContext.current
+
+
         Column (modifier = Modifier.verticalScroll(rememberScrollState())) {
 
 
@@ -177,7 +195,7 @@ fun ItemScreen(navController: NavController){
                     )
 
                     Text(
-                        text = "Ksh 2, 000",
+                        text = "Was Ksh 2, 000",
                         fontSize = 10.sp,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -211,7 +229,12 @@ fun ItemScreen(navController: NavController){
                         )
                     }
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val smsIntent=Intent(Intent.ACTION_SENDTO)
+                            smsIntent.data="smsto:0712564288".toUri()
+                            smsIntent.putExtra("sms_body","Hello Haraka Mall,I'm interested in this product")
+                            mContext.startActivity(smsIntent)
+                        },
                         modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
                         colors = ButtonDefaults.buttonColors(Orange),
                         shape = RoundedCornerShape(10.dp)
@@ -259,7 +282,7 @@ fun ItemScreen(navController: NavController){
                     )
 
                     Text(
-                        text = "Ksh 2, 000",
+                        text = "Was Ksh 2, 000",
                         fontSize = 10.sp,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -293,7 +316,12 @@ fun ItemScreen(navController: NavController){
                         )
                     }
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val smsIntent=Intent(Intent.ACTION_SENDTO)
+                            smsIntent.data="smsto:0712564288".toUri()
+                            smsIntent.putExtra("sms_body","Hello Haraka Mall,I'm interested in this product")
+                            mContext.startActivity(smsIntent)
+                        },
                         modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
                         colors = ButtonDefaults.buttonColors(Orange),
                         shape = RoundedCornerShape(10.dp)
@@ -341,7 +369,7 @@ fun ItemScreen(navController: NavController){
                     )
 
                     Text(
-                        text = "Ksh 2, 000",
+                        text = "Was Ksh 2, 000",
                         fontSize = 10.sp,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -375,7 +403,12 @@ fun ItemScreen(navController: NavController){
                         )
                     }
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val smsIntent=Intent(Intent.ACTION_SENDTO)
+                            smsIntent.data="smsto:0712564288".toUri()
+                            smsIntent.putExtra("sms_body","Hello Haraka Mall,I'm interested in this product")
+                            mContext.startActivity(smsIntent)
+                        },
                         modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
                         colors = ButtonDefaults.buttonColors(Orange),
                         shape = RoundedCornerShape(10.dp)
@@ -421,7 +454,7 @@ fun ItemScreen(navController: NavController){
                     )
 
                     Text(
-                        text = "Ksh 2, 000",
+                        text = "Was Ksh 2, 000",
                         fontSize = 10.sp,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -455,7 +488,12 @@ fun ItemScreen(navController: NavController){
                         )
                     }
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val smsIntent=Intent(Intent.ACTION_SENDTO)
+                            smsIntent.data="smsto:0712564288".toUri()
+                            smsIntent.putExtra("sms_body","Hello Haraka Mall,I'm interested in this product")
+                            mContext.startActivity(smsIntent)
+                        },
                         modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
                         colors = ButtonDefaults.buttonColors(Orange),
                         shape = RoundedCornerShape(10.dp)
@@ -501,7 +539,7 @@ fun ItemScreen(navController: NavController){
                     )
 
                     Text(
-                        text = "Ksh 2, 000",
+                        text = "Was Ksh 2, 000",
                         fontSize = 10.sp,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -535,7 +573,13 @@ fun ItemScreen(navController: NavController){
                         )
                     }
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val smsIntent=Intent(Intent.ACTION_SENDTO)
+                            smsIntent.data="smsto:0712564288".toUri()
+                            smsIntent.putExtra("sms_body","Hello Haraka Mall,I'm interested in this product")
+                            mContext.startActivity(smsIntent)
+
+                        },
                         modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
                         colors = ButtonDefaults.buttonColors(Orange),
                         shape = RoundedCornerShape(10.dp)
@@ -581,7 +625,7 @@ fun ItemScreen(navController: NavController){
                     )
 
                     Text(
-                        text = "Ksh 2, 000",
+                        text = "Was Ksh 2, 000",
                         fontSize = 10.sp,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -615,7 +659,12 @@ fun ItemScreen(navController: NavController){
                         )
                     }
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val smsIntent=Intent(Intent.ACTION_SENDTO)
+                            smsIntent.data="smsto:0712564288".toUri()
+                            smsIntent.putExtra("sms_body","Hello Haraka Mall,I'm interested in this product")
+                            mContext.startActivity(smsIntent)
+                        },
                         modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
                         colors = ButtonDefaults.buttonColors(Orange),
                         shape = RoundedCornerShape(10.dp)
@@ -661,7 +710,7 @@ fun ItemScreen(navController: NavController){
                     )
 
                     Text(
-                        text = "Ksh 2, 000",
+                        text = "Was Ksh 2, 000",
                         fontSize = 10.sp,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -695,7 +744,12 @@ fun ItemScreen(navController: NavController){
                         )
                     }
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val smsIntent=Intent(Intent.ACTION_SENDTO)
+                            smsIntent.data="smsto:0712564288".toUri()
+                            smsIntent.putExtra("sms_body","Hello Haraka Mall,I'm interested in this product")
+                            mContext.startActivity(smsIntent)
+                        },
                         modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
                         colors = ButtonDefaults.buttonColors(Orange),
                         shape = RoundedCornerShape(10.dp)
@@ -741,7 +795,7 @@ fun ItemScreen(navController: NavController){
                     )
 
                     Text(
-                        text = "Ksh 2, 000",
+                        text = "Was Ksh 2, 000",
                         fontSize = 10.sp,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -775,7 +829,12 @@ fun ItemScreen(navController: NavController){
                         )
                     }
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val smsIntent=Intent(Intent.ACTION_SENDTO)
+                            smsIntent.data="smsto:0712564288".toUri()
+                            smsIntent.putExtra("sms_body","Hello Haraka Mall,I'm interested in this product")
+                            mContext.startActivity(smsIntent)
+                        },
                         modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
                         colors = ButtonDefaults.buttonColors(Orange),
                         shape = RoundedCornerShape(10.dp)
@@ -821,7 +880,7 @@ fun ItemScreen(navController: NavController){
                     )
 
                     Text(
-                        text = "Ksh 2, 000",
+                        text = "Was Ksh 2, 000",
                         fontSize = 10.sp,
                         textDecoration = TextDecoration.LineThrough,
                     )
@@ -855,7 +914,12 @@ fun ItemScreen(navController: NavController){
                         )
                     }
                     Button(
-                        onClick = {},
+                        onClick = {
+                            val smsIntent=Intent(Intent.ACTION_SENDTO)
+                            smsIntent.data="smsto:0712564288".toUri()
+                            smsIntent.putExtra("sms_body","Hello Haraka Mall,I'm interested in this product")
+                            mContext.startActivity(smsIntent)
+                        },
                         modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
                         colors = ButtonDefaults.buttonColors(Orange),
                         shape = RoundedCornerShape(10.dp)
