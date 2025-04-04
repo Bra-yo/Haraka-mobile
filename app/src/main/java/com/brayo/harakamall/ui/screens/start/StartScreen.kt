@@ -28,6 +28,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.brayo.harakamall.R
 import com.brayo.harakamall.navigation.ROUT_ITEM
+import com.brayo.harakamall.navigation.ROUT_LOGIN
+import com.brayo.harakamall.navigation.ROUT_REGISTER
 import com.brayo.harakamall.ui.theme.neworange
 
 @Composable
@@ -77,7 +79,7 @@ fun StartScreen(navController: NavController){
 
 
         Button(onClick = {
-            navController.navigate(ROUT_ITEM)
+            navController.navigate(ROUT_LOGIN)
         },
             colors = ButtonDefaults.buttonColors(neworange),
             shape = RoundedCornerShape(5.dp)
