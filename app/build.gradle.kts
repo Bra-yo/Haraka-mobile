@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id ("kotlin-kapt")
+
 }
 
 android {
@@ -56,7 +58,22 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    implementation("androidx.navigation:navigation-runtime:2.4.0")
+     //for navigation
+    implementation("androidx.navigation:navigation-runtime:2.8.9")
     implementation("androidx.navigation:navigation-compose:2.8.9")
+
+    //for database
+
+    //Room
+    implementation ("androidx.room:room-runtime:2.7.0")
+    kapt ("androidx.room:room-compiler:2.7.0")
+    implementation ("androidx.room:room-ktx:2.7.0")
+
+
+    // Image Loading (Coil for Jetpack Compose)
+    implementation ("io.coil-kt:coil-compose:2.4.0")
+
+    //livedata
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.4")
+
 }
