@@ -11,8 +11,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
@@ -107,6 +109,7 @@ fun ItemScreen(navController: NavController){
         )
         //End
 
+
         Image(
             painter = painterResource(R.drawable.mall),
             contentDescription = "Mall",
@@ -140,251 +143,739 @@ fun ItemScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        //Row
-        Row (
-            modifier = Modifier.padding(start = 20.dp)
-        ){
-            Image(
-                painter = painterResource(R.drawable.mall),
-                contentDescription = "",
-                modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.FillWidth,
-            )
+        Column (modifier = Modifier.verticalScroll(rememberScrollState())) {
 
-            Spacer(modifier = Modifier.width(5.dp))
 
-            Column (
-                modifier = Modifier.padding(start = 5.dp)
-            ) {
-                Text(
-                    text = "Shopping Mall Space",
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.ExtraBold,
-                    modifier = Modifier.padding(start = 5.dp, end = 5.dp)
-
+            //Row
+            Row (
+                modifier = Modifier.padding(start = 20.dp)
+            ){
+                Image(
+                    painter = painterResource(R.drawable.mall),
+                    contentDescription = "",
+                    modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.FillWidth,
                 )
 
-                Text(
-                    text = "Casual Wear",
-                    fontSize = 10.sp,
-                    fontWeight = FontWeight.Bold,
-                )
+                Spacer(modifier = Modifier.width(5.dp))
 
-                Text(
-                    text = "Ksh 2, 000",
-                    fontSize = 10.sp,
-                    textDecoration = TextDecoration.LineThrough,
-                )
-
-                Text(
-                    text = "Price: Ksh 1, 800",
-                    fontSize = 10.sp,
-
-                    )
-
-                Row (){
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                }
-                Button(
-                    onClick = {},
-                    modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
-                    colors = ButtonDefaults.buttonColors(Orange),
-                    shape = RoundedCornerShape(10.dp)
-
+                Column (
+                    modifier = Modifier.padding(start = 5.dp)
                 ) {
                     Text(
-                        text = "Contact Us",
+                        text = "Shopping Mall Space",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
+
                     )
+
+                    Text(
+                        text = "Casual Wear",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+
+                    Text(
+                        text = "Ksh 2, 000",
+                        fontSize = 10.sp,
+                        textDecoration = TextDecoration.LineThrough,
+                    )
+
+                    Text(
+                        text = "Price: Ksh 1, 800",
+                        fontSize = 10.sp,
+
+                        )
+
+                    Row (){
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                    }
+                    Button(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
+                        colors = ButtonDefaults.buttonColors(Orange),
+                        shape = RoundedCornerShape(10.dp)
+
+                    ) {
+                        Text(
+                            text = "Contact Us",
+                        )
+                    }
+
+
                 }
 
 
-            }
+            }//EndRow
 
-
-        }//EndRow
-
-        //Row
-        Row (
-            modifier = Modifier.padding(start = 20.dp)
-        ){
-            Image(
-                painter = painterResource(R.drawable.mall),
-                contentDescription = "",
-                modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.FillWidth,
-            )
-
-            Spacer(modifier = Modifier.width(5.dp))
-
-            Column (
-                modifier = Modifier.padding(start = 5.dp)
-            ) {
-                Text(
-                    text = "Shopping Mall Space",
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.ExtraBold,
-                    modifier = Modifier.padding(start = 5.dp, end = 5.dp)
-
+            //Row
+            Row (
+                modifier = Modifier.padding(start = 20.dp)
+            ){
+                Image(
+                    painter = painterResource(R.drawable.mall),
+                    contentDescription = "",
+                    modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.FillWidth,
                 )
 
-                Text(
-                    text = "Casual Wear",
-                    fontSize = 10.sp,
-                    fontWeight = FontWeight.Bold,
-                )
+                Spacer(modifier = Modifier.width(5.dp))
 
-                Text(
-                    text = "Ksh 2, 000",
-                    fontSize = 10.sp,
-                    textDecoration = TextDecoration.LineThrough,
-                )
-
-                Text(
-                    text = "Price: Ksh 1, 800",
-                    fontSize = 10.sp,
-
-                    )
-
-                Row (){
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                }
-                Button(
-                    onClick = {},
-                    modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
-                    colors = ButtonDefaults.buttonColors(Orange),
-                    shape = RoundedCornerShape(10.dp)
-
+                Column (
+                    modifier = Modifier.padding(start = 5.dp)
                 ) {
                     Text(
-                        text = "Contact Us",
-                    )
-                }
-
-
-            }
-
-
-        }//EndRow
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        //Row
-        Row (
-            modifier = Modifier.padding(start = 20.dp)
-        ){
-            Image(
-                painter = painterResource(R.drawable.mall),
-                contentDescription = "",
-                modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.FillWidth,
-            )
-
-            Spacer(modifier = Modifier.width(5.dp))
-
-            Column () {
-                Text(
-                    text = "Shopping Mall Space",
-                    fontSize = 15.sp,
-                    fontWeight = FontWeight.ExtraBold,
-                    modifier = Modifier.padding(start = 5.dp, end = 5.dp)
-
-                )
-
-                Text(
-                    text = "Casual Wear",
-                    fontSize = 10.sp,
-                    fontWeight = FontWeight.Bold,
-                )
-
-                Text(
-                    text = "Ksh 2, 000",
-                    fontSize = 10.sp,
-                    textDecoration = TextDecoration.LineThrough,
-                )
-
-                Text(
-                    text = "Price: Ksh 1, 800",
-                    fontSize = 10.sp,
+                        text = "Shopping Mall Space",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
 
                     )
 
-                Row (){
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "",
-                        tint = Gold,
-                    )
-                }
-                Button(
-                    onClick = {},
-                    modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
-                    colors = ButtonDefaults.buttonColors(Orange),
-                    shape = RoundedCornerShape(10.dp)
-
-                ) {
                     Text(
-                        text = "Contact Us",
+                        text = "Casual Wear",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
                     )
+
+                    Text(
+                        text = "Ksh 2, 000",
+                        fontSize = 10.sp,
+                        textDecoration = TextDecoration.LineThrough,
+                    )
+
+                    Text(
+                        text = "Price: Ksh 1, 800",
+                        fontSize = 10.sp,
+
+                        )
+
+                    Row (){
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                    }
+                    Button(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
+                        colors = ButtonDefaults.buttonColors(Orange),
+                        shape = RoundedCornerShape(10.dp)
+
+                    ) {
+                        Text(
+                            text = "Contact Us",
+                        )
+                    }
+
+
                 }
 
 
-            }
+            }//EndRow
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            //Row
+            Row (
+                modifier = Modifier.padding(start = 20.dp)
+            ){
+                Image(
+                    painter = painterResource(R.drawable.mall),
+                    contentDescription = "",
+                    modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
+
+                Column () {
+                    Text(
+                        text = "Shopping Mall Space",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
+
+                    )
+
+                    Text(
+                        text = "Casual Wear",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+
+                    Text(
+                        text = "Ksh 2, 000",
+                        fontSize = 10.sp,
+                        textDecoration = TextDecoration.LineThrough,
+                    )
+
+                    Text(
+                        text = "Price: Ksh 1, 800",
+                        fontSize = 10.sp,
+
+                        )
+
+                    Row (){
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                    }
+                    Button(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
+                        colors = ButtonDefaults.buttonColors(Orange),
+                        shape = RoundedCornerShape(10.dp)
+
+                    ) {
+                        Text(
+                            text = "Contact Us",
+                        )
+                    }
 
 
-        }//EndRow
+                }
+
+
+            }//EndRow
+
+            //Row
+            Row (
+                modifier = Modifier.padding(start = 20.dp)
+            ){
+                Image(
+                    painter = painterResource(R.drawable.mall),
+                    contentDescription = "",
+                    modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
+
+                Column () {
+                    Text(
+                        text = "Shopping Mall Space",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
+
+                    )
+
+                    Text(
+                        text = "Casual Wear",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+
+                    Text(
+                        text = "Ksh 2, 000",
+                        fontSize = 10.sp,
+                        textDecoration = TextDecoration.LineThrough,
+                    )
+
+                    Text(
+                        text = "Price: Ksh 1, 800",
+                        fontSize = 10.sp,
+
+                        )
+
+                    Row (){
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                    }
+                    Button(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
+                        colors = ButtonDefaults.buttonColors(Orange),
+                        shape = RoundedCornerShape(10.dp)
+
+                    ) {
+                        Text(
+                            text = "Contact Us",
+                        )
+                    }
+
+
+                }
+
+
+            }//EndRow
+
+            //Row
+            Row (
+                modifier = Modifier.padding(start = 20.dp)
+            ){
+                Image(
+                    painter = painterResource(R.drawable.mall),
+                    contentDescription = "",
+                    modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
+
+                Column () {
+                    Text(
+                        text = "Shopping Mall Space",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
+
+                    )
+
+                    Text(
+                        text = "Casual Wear",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+
+                    Text(
+                        text = "Ksh 2, 000",
+                        fontSize = 10.sp,
+                        textDecoration = TextDecoration.LineThrough,
+                    )
+
+                    Text(
+                        text = "Price: Ksh 1, 800",
+                        fontSize = 10.sp,
+
+                        )
+
+                    Row (){
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                    }
+                    Button(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
+                        colors = ButtonDefaults.buttonColors(Orange),
+                        shape = RoundedCornerShape(10.dp)
+
+                    ) {
+                        Text(
+                            text = "Contact Us",
+                        )
+                    }
+
+
+                }
+
+
+            }//EndRow
+
+            //Row
+            Row (
+                modifier = Modifier.padding(start = 20.dp)
+            ){
+                Image(
+                    painter = painterResource(R.drawable.mall),
+                    contentDescription = "",
+                    modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
+
+                Column () {
+                    Text(
+                        text = "Shopping Mall Space",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
+
+                    )
+
+                    Text(
+                        text = "Casual Wear",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+
+                    Text(
+                        text = "Ksh 2, 000",
+                        fontSize = 10.sp,
+                        textDecoration = TextDecoration.LineThrough,
+                    )
+
+                    Text(
+                        text = "Price: Ksh 1, 800",
+                        fontSize = 10.sp,
+
+                        )
+
+                    Row (){
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                    }
+                    Button(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
+                        colors = ButtonDefaults.buttonColors(Orange),
+                        shape = RoundedCornerShape(10.dp)
+
+                    ) {
+                        Text(
+                            text = "Contact Us",
+                        )
+                    }
+
+
+                }
+
+
+            }//EndRow
+
+            //Row
+            Row (
+                modifier = Modifier.padding(start = 20.dp)
+            ){
+                Image(
+                    painter = painterResource(R.drawable.mall),
+                    contentDescription = "",
+                    modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
+
+                Column () {
+                    Text(
+                        text = "Shopping Mall Space",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
+
+                    )
+
+                    Text(
+                        text = "Casual Wear",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+
+                    Text(
+                        text = "Ksh 2, 000",
+                        fontSize = 10.sp,
+                        textDecoration = TextDecoration.LineThrough,
+                    )
+
+                    Text(
+                        text = "Price: Ksh 1, 800",
+                        fontSize = 10.sp,
+
+                        )
+
+                    Row (){
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                    }
+                    Button(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
+                        colors = ButtonDefaults.buttonColors(Orange),
+                        shape = RoundedCornerShape(10.dp)
+
+                    ) {
+                        Text(
+                            text = "Contact Us",
+                        )
+                    }
+
+
+                }
+
+
+            }//EndRow
+
+            //Row
+            Row (
+                modifier = Modifier.padding(start = 20.dp)
+            ){
+                Image(
+                    painter = painterResource(R.drawable.mall),
+                    contentDescription = "",
+                    modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
+
+                Column () {
+                    Text(
+                        text = "Shopping Mall Space",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
+
+                    )
+
+                    Text(
+                        text = "Casual Wear",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+
+                    Text(
+                        text = "Ksh 2, 000",
+                        fontSize = 10.sp,
+                        textDecoration = TextDecoration.LineThrough,
+                    )
+
+                    Text(
+                        text = "Price: Ksh 1, 800",
+                        fontSize = 10.sp,
+
+                        )
+
+                    Row (){
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                    }
+                    Button(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
+                        colors = ButtonDefaults.buttonColors(Orange),
+                        shape = RoundedCornerShape(10.dp)
+
+                    ) {
+                        Text(
+                            text = "Contact Us",
+                        )
+                    }
+
+
+                }
+
+
+            }//EndRow
+
+            //Row
+            Row (
+                modifier = Modifier.padding(start = 20.dp)
+            ){
+                Image(
+                    painter = painterResource(R.drawable.mall),
+                    contentDescription = "",
+                    modifier = Modifier.width(200.dp).clip(shape = RoundedCornerShape(10.dp)),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+                Spacer(modifier = Modifier.width(5.dp))
+
+                Column () {
+                    Text(
+                        text = "Shopping Mall Space",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
+
+                    )
+
+                    Text(
+                        text = "Casual Wear",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+
+                    Text(
+                        text = "Ksh 2, 000",
+                        fontSize = 10.sp,
+                        textDecoration = TextDecoration.LineThrough,
+                    )
+
+                    Text(
+                        text = "Price: Ksh 1, 800",
+                        fontSize = 10.sp,
+
+                        )
+
+                    Row (){
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                        Icon(
+                            imageVector = Icons.Default.Star,
+                            contentDescription = "",
+                            tint = Gold,
+                        )
+                    }
+                    Button(
+                        onClick = {},
+                        modifier = Modifier.fillMaxWidth().padding(end = 40.dp).height(35.dp),
+                        colors = ButtonDefaults.buttonColors(Orange),
+                        shape = RoundedCornerShape(10.dp)
+
+                    ) {
+                        Text(
+                            text = "Contact Us",
+                        )
+                    }
+
+
+                }
+
+
+            }//EndRow
+
+
+        }
+
+
 
 
 
