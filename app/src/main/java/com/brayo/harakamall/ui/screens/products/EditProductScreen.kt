@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -25,6 +26,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.brayo.harakamall.model.Product
 import com.brayo.harakamall.navigation.ROUT_ADD_PRODUCT
 import com.brayo.harakamall.navigation.ROUT_PRODUCT_LIST
+import com.brayo.harakamall.ui.theme.neworange
 import com.brayo.harakamall.viewmodel.ProductViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -90,6 +92,7 @@ fun EditProductScreen(productId: Int?, navController: NavController, viewModel: 
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .background(color = neworange)
                 .padding(paddingValues)
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally

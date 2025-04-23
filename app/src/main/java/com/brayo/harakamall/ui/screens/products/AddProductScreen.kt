@@ -15,7 +15,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -27,6 +29,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.brayo.harakamall.R
 import com.brayo.harakamall.navigation.ROUT_ADD_PRODUCT
 import com.brayo.harakamall.navigation.ROUT_PRODUCT_LIST
+import com.brayo.harakamall.ui.theme.neworange
 import com.brayo.harakamall.viewmodel.ProductViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -91,6 +94,7 @@ fun AddProductScreen(navController: NavController, viewModel: ProductViewModel) 
             Column(
                 modifier = Modifier
                     .fillMaxSize()
+                    .background(color = neworange)
                     .padding(paddingValues)
                     .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
@@ -164,6 +168,7 @@ fun AddProductScreen(navController: NavController, viewModel: ProductViewModel) 
                             imageUri?.toString()?.let { viewModel.addProduct(name, priceValue, phone,it) }
                             navController.popBackStack()
                         }
+                        navController.navigate(ROUT_PRODUCT_LIST)
                     },
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(8.dp),

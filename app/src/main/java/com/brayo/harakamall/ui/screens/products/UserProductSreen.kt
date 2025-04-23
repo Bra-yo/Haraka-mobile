@@ -40,19 +40,17 @@ import coil.compose.rememberAsyncImagePainter
 import com.brayo.harakamall.R
 import com.brayo.harakamall.viewmodel.ProductViewModel
 import com.brayo.harakamall.model.Product
-import com.brayo.harakamall.navigation.ROUT_ADD_PRODUCT
-import com.brayo.harakamall.navigation.ROUT_EDIT_PRODUCT
-import com.brayo.harakamall.navigation.ROUT_PRODUCT_LIST
+import com.brayo.harakamall.navigation.ROUT_DASHBOARD
+import com.brayo.harakamall.navigation.ROUT_INTENT
 import com.brayo.harakamall.navigation.editProductRoute
-import java.io.File
-import java.io.FileOutputStream
+import com.brayo.harakamall.ui.theme.neworange
 import java.io.IOException
 import java.io.OutputStream
 
 @RequiresApi(Build.VERSION_CODES.Q)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProductListScreen(navController: NavController, viewModel: ProductViewModel) {
+fun UserProductScreen(navController: NavController, viewModel: ProductViewModel) {
     val productList by viewModel.allProducts.observeAsState(emptyList())
     var showMenu by remember { mutableStateOf(false) }
     var searchQuery by remember { mutableStateOf("") }
@@ -76,16 +74,16 @@ fun ProductListScreen(navController: NavController, viewModel: ProductViewModel)
                             onDismissRequest = { showMenu = false }
                         ) {
                             DropdownMenuItem(
-                                text = { Text("Product List") },
+                                text = { Text("Intent") },
                                 onClick = {
-                                    navController.navigate(ROUT_PRODUCT_LIST)
+                                    navController.navigate(ROUT_INTENT)
                                     showMenu = false
                                 }
                             )
                             DropdownMenuItem(
-                                text = { Text("Add Product") },
+                                text = { Text("Dashboard") },
                                 onClick = {
-                                    navController.navigate(ROUT_ADD_PRODUCT)
+                                    navController.navigate(ROUT_DASHBOARD)
                                     showMenu = false
                                 }
                             )
@@ -124,6 +122,7 @@ fun ProductListScreen(navController: NavController, viewModel: ProductViewModel)
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .background(color = neworange)
                 .padding(paddingValues)
                 .padding(16.dp)
         ) {
@@ -232,7 +231,7 @@ fun ProductItem(navController: NavController, product: Product, viewModel: Produ
                     // Edit Product
                     IconButton(
                         onClick = {
-                            navController.navigate(ROUT_EDIT_PRODUCT)
+                            navController.navigate(editProductRoute(product.id))
                         }
                     ) {
                         Icon(

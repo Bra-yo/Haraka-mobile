@@ -29,6 +29,7 @@ import com.brayo.harakamall.navigation.ROUT_REGISTER
 import com.brayo.harakamall.R
 import com.brayo.harakamall.navigation.ROUT_DASHBOARD
 import com.brayo.harakamall.navigation.ROUT_ITEM
+import com.brayo.harakamall.navigation.ROUT_PRODUCT_LIST
 import com.brayo.harakamall.navigation.ROUT_REGISTER
 import com.brayo.harakamall.ui.theme.neworange
 import com.brayo.harakamall.viewmodel.AuthViewModel
@@ -51,7 +52,7 @@ fun LoginScreen(
                 Toast.makeText(context, "Invalid Credentials", Toast.LENGTH_SHORT).show()
             } else {
                 if (user.role == "admin") {
-                    navController.navigate(ROUT_ITEM) {
+                    navController.navigate(ROUT_PRODUCT_LIST) {
                     }
                 } else {
                     navController.navigate(ROUT_DASHBOARD) {

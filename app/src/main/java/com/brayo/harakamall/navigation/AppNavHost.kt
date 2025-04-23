@@ -1,15 +1,20 @@
 package com.brayo.harakamall.navigation
 
+import android.R.attr.type
 import android.annotation.SuppressLint
+import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.brayo.harakamall.data.UserDatabase
 import com.brayo.harakamall.repository.UserRepository
 import com.brayo.harakamall.ui.screens.about.AboutScreen
@@ -31,6 +36,7 @@ import com.brayo.harakamall.viewmodel.AuthViewModel
 import com.brayo.harakamall.viewmodel.ProductViewModel
 
 
+@RequiresApi(Build.VERSION_CODES.Q)
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("ViewModelConstructorInComposable")
 
@@ -41,7 +47,8 @@ import com.brayo.harakamall.viewmodel.ProductViewModel
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_SPLASH
+    startDestination: String = ROUT_SPLASH,
+    productViewModel: ProductViewModel = viewModel ()
 ) {
 
     val context = LocalContext.current
@@ -109,11 +116,11 @@ fun AppNavHost(
 
         // PRODUCTS
         composable(ROUT_ADD_PRODUCT) {
-            AddProductScreen(navController, ProductViewModel)
+            AddProductScreen(navController, productViewModel)
         }
 
         composable(ROUT_PRODUCT_LIST) {
-            ProductListScreen(navController, ProductViewModel)
+            ProductListScreen(navController, productViewModel)
         }
 
         composable(
@@ -122,7 +129,7 @@ fun AppNavHost(
         ) { backStackEntry ->
             val productId = backStackEntry.arguments?.getInt("productId")
             if (productId != null) {
-                EditProductScreen(productId, navController, ProductViewModel)
+                EditProductScreen(productId, navController, productViewModel)
             }
         }
 
